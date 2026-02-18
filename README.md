@@ -35,3 +35,27 @@ Google Cloud provides virtual computing resources that allow users to run server
 
 ## Key Benefit
 Cloud environments allow scalable infrastructure for hosting applications like library systems.
+
+# Managing Softwar & Library Search
+## Install yaz Client
+[apt search yaz]
+- Found [yaz]
+[man yaz-client]
+- Very detailed documentation
+- Commands & syntax explained
+- Some parts easy, some overwhelming
+Exit manual
+[q]
+
+## Using yaz-client
+- Start client = [yaz-client]
+      Prompt shows: [Z>]
+- Connect to library catalog = [open z3950.loc.gov:7090/Voyager]
+- Title search = [find @attr 1=4 "ancient egypt"]
+- Author search = [find @attr 1=1003 "Herodotus"]
+
+## Key takeaways
+- APT manages software installation and updates
+- Command line shows informational and confirmation messages
+- yaz-client connects to real library catalogs
+- Documentation helps understand commands
