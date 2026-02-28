@@ -59,3 +59,37 @@ Exit manual
 - Command line shows informational and confirmation messages
 - yaz-client connects to real library catalogs
 - Documentation helps understand commands
+
+## Install & Test Apache
+First, I updated the package list and upgraded installed software to ensure the system was current.
+- sudo apt update
+- sudo apt upgrade -y
+This step refreshed available packages and installed updates for system stability and security.
+
+# Apache Web Server
+- sudo apt install apache2 -y
+The installation downloaded and configured Apache and its dependencies.
+# Create New Webpage
+- sudo nano index.html
+- <!DOCTYPE html>
+<html>
+<head>
+    <title>My First Web Page</title>
+</head>
+<body>
+    <h1>Welcome to My Apache Server!</h1>
+    <p>This page is running on my Ubuntu virtual machine for my SYSlib assignment.</p>
+</body>
+</html>
+
+## Key Concepts Learned
+- Updating Ubuntu systems using apt
+ Installing and managing services with systemctl
+- Testing local vs external server access
+- Cloud firewall configuration and HTTP traffic rules
+- Apache document root structure (/var/www/html)
+- Deploying basic HTML content to a web server
+- Differences between Google Cloud Shell and a virtual machine environment
+
+# Reflection
+This activity provided practical experience with server deployment and web hosting fundamentals. A major challenge was initially working in Google Cloud Shell instead of the virtual machine, which prevented service management commands from functioning properly. Once inside the VM, the installation process was straightforward. Troubleshooting firewall settings also helped demonstrate how infrastructure configuration impacts service accessibility. Overall, the assignment improved my understanding of how web servers operate and how cloud-based systems manage hosted services.
