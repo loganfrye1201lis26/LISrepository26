@@ -93,3 +93,37 @@ The installation downloaded and configured Apache and its dependencies.
 
 # Reflection
 This activity provided practical experience with server deployment and web hosting fundamentals. A major challenge was initially working in Google Cloud Shell instead of the virtual machine, which prevented service management commands from functioning properly. Once inside the VM, the installation process was straightforward. Troubleshooting firewall settings also helped demonstrate how infrastructure configuration impacts service accessibility. Overall, the assignment improved my understanding of how web servers operate and how cloud-based systems manage hosted services.
+
+## Installing PHP & Configuring Apache
+In this module, I installed PHP on my Ubuntu server and configured Apache to properly process PHP files. This verified that my server can deliver dynamic content rather than just static HTML.
+# PHP & Apache PHP Module
+- sudo apt install php libapache2-mod-php
+This installs:
+The PHP runtime
+The Apache PHP module that allows Apache to process .php files
+
+# Important Troubleshooting Lesson
+At first, I attempted to use systemctl from Google Cloud Shell, which produced this error:
+- System has not been booted with systemd as init system (PID 1)
+This happened because Cloud Shell is not the VM instance. I needed to SSH directly into the Compute Engine VM. Once inside the VM, systemctl worked properly.
+This reinforced the importance of understanding environment context when administering servers.
+
+# Testing PHP with inf.php
+- sudo nano /var/www/html/info.php
+  Inserted:
+  - <?php
+    phpinfo();
+    ?>
+The PHP configuration page loaded successfully, confirming:
+- PHP is installed
+- Apache is processing PHP
+- The server is returning dynamic output
+
+# Reflection
+This module reinforced several key concepts:
+1. The difference between static and dynamic web content.
+2. How Apache integrates with language modules.
+3. Why configuration order (DirectoryIndex) matters.
+4. The importance of testing configuration changes before restarting services.
+5. The necessity of understanding server context (Cloud Shell vs VM).
+The most significant troubleshooting moment was realizing that systemctl must be run inside the VM, not in Cloud Shell. That distinction clarified how cloud infrastructure layers operate.
